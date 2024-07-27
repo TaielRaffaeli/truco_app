@@ -19,7 +19,7 @@ def main():
     data_yaml_path = "C:/Users/raffa/OneDrive/Escritorio/truco_app/data_yolo/data.yaml"
 
     # Crear y entrenar el modelo YOLOv8
-    model = YOLO('yolov8n.pt')  # Puedes cambiar a 'yolov8s.pt', 'yolov8m.pt', etc., según tus necesidades
+    model = YOLO('yolov8n.pt')  
     model.train(data=data_yaml_path, epochs=20, batch=32, imgsz=640, name='aumentado_1', device=0)
 
     print("Entrenamiento completado.")

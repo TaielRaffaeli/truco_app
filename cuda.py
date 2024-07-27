@@ -25,6 +25,6 @@ print(f"Versión de CUDA: {cuda_version}")
 print(f"Versión de PyTorch: {torch_version}")
 print(f"Nombre de la GPU: {gpu_name}")
 
-# Comprobar las versiones de otros paquetes necesarios para YOLOv8
+# Comprobar las versiones de otros paquetes necesarios
 import ultralytics
 print(f"Versión de Ultralytics YOLO: {ultralytics.__version__}")

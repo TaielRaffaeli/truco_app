@@ -21,7 +21,7 @@ def draw_bounding_boxes(image, label_file, original_size, resized_size):
             x_max = int((x_center + width / 2) * new_w / orig_w)
             y_max = int((y_center + height / 2) * new_h / orig_h)
             
-            cv.rectangle(image, (x_min, y_min), (x_max, y_max), (0, 0, 255), 3)  # Rojo y más grueso
+            cv.rectangle(image, (x_min, y_min), (x_max, y_max), (0, 0, 255), 3)
             cv.putText(image, str(class_id), (x_min, y_min - 10), cv.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
 
 def create_collage(images, collage_shape=(5, 6), image_size=(256, 256)):
@@ -78,9 +78,6 @@ def visualize_images_with_bboxes(data_path, num_images=30):
         plt.show()
 
 # Ruta a la carpeta que contiene las imágenes y archivos .txt
-#DATA_PATH = r"fotos_textos_data"
-#visualize_images_with_bboxes(DATA_PATH)
-
-DATA_PATH = r"imagenes_aumentadas_prueba_ariel"
+DATA_PATH = r"fotos_textos_data"
 visualize_images_with_bboxes(DATA_PATH)
 

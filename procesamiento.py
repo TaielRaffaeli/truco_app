@@ -117,5 +117,5 @@ def validate_images_and_annotations(data_path):
 # Primero validar imágenes y anotaciones
 validate_images_and_annotations(DATA_PATH)
 
-# Luego procesar anotaciones para convertirlas al formato YOLO si es necesario
+# Procesar imagenes y anotaciones
 process_annotations(DATA_PATH)
