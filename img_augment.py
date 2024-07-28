@@ -5,12 +5,12 @@ import albumentations as A
 import yaml
 import cv2
 
-def augment_dataset(num_augmentations=5):
+def augment_dataset(carpeta=str, num_augmentations=5):
 
-    input_path = "C:/Users/raffa/OneDrive/Escritorio/truco_app/data_yolo/images/train"
-    labels_path = 'C:/Users/raffa/OneDrive/Escritorio/truco_app/data_yolo/labels/train'
-    output_path_images = "C:/Users/raffa/OneDrive/Escritorio/truco_app/data_yolo/images/train"
-    output_path_labels = "C:/Users/raffa/OneDrive/Escritorio/truco_app/data_yolo/labels/train"
+    input_path = f"./{carpeta}/images/train"
+    labels_path = f'./{carpeta}/labels/train'
+    output_path_images = f"./{carpeta}/images/train"
+    output_path_labels = f"./{carpeta}/labels/train"
  
     os.makedirs(output_path_images, exist_ok=True)
     os.makedirs(output_path_labels, exist_ok=True)
@@ -82,4 +82,8 @@ def augment_dataset(num_augmentations=5):
     print(f"Skipped images: {skipped_images}")
 
 
-augment_dataset(5)
+augment_dataset("data_yolo_aumentado", 10)
+
+
+
+

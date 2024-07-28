@@ -5,8 +5,8 @@ import random
 import yaml
 
 # Ruta a las imágenes y anotaciones
-DATA_PATH = "fotos_textos_data"
-DST_DATASET = "data_yolo"
+DATA_PATH = "fotos_textos_data_copy"
+DST_DATASET = "data_yolo_aumentado"
 
 # Configuración del dataset YOLO
 yolo_ds_config = {
@@ -43,7 +43,8 @@ with open(os.path.join(DST_DATASET, 'classes.txt'), 'w') as outfile:
 label_files = glob.glob(os.path.join(DATA_PATH, "*.txt"))
 
 # Dividir en conjuntos de entrenamiento y validación
-val_files = set(random.sample(label_files, k=int(len(label_files) * 0.20)))
+# val_files = set(random.sample(label_files, k=int(len(label_files) * 0.20)))
+val_files = set(random.sample(label_files, k=int(len(label_files) * 0.30)))
 
 for file in val_files:
     shutil.move(file, yolo_ds_dirs["lbl_val"])

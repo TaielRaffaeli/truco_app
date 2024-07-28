@@ -3,7 +3,11 @@ duplicados_out.py
 albumentatipons.py
 fotos_textos
 fotos_textos_data
-data_yolo
-data_yolo_copy
+data_yolo_base
+data_yolo_aumentado(5000)
+data_yolo_aumentado_(10mil)
 runs
 yolov8n.pt
+img_test
+img_anomalias
+inferencia
