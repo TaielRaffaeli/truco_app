@@ -6,8 +6,8 @@ fotos_textos_data
 data_yolo_base
 data_yolo_aumentado(5000)
 data_yolo_aumentado_(10mil)
-runs
 yolov8n.pt
 img_test
 img_anomalias
 inferencia
+data_yolo

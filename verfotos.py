@@ -81,3 +81,4 @@ def visualize_images_with_bboxes(data_path, num_images=30):
 DATA_PATH = r"fotos_textos_data"
 visualize_images_with_bboxes(DATA_PATH)
 
+
