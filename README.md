@@ -2,6 +2,11 @@
 
 Este proyecto contiene el código y notebooks necesarios para el procesamiento de datos, creación de datasets, aumentación de imágenes, y entrenamiento de modelos YOLOv8 para detección de objetos. Específicamente, se ha entrenado un modelo YOLOv8n para el reconocimiento de cartas españolas, identificando sus respectivos valores y clases (Oros, Copas, Espadas y Bastos). Además, se han utilizado scripts adicionales para calcular el puntaje de envido en el juego argentino de cartas Truco.
 
+### Flujo de datos
+
+![Descripción de la imagen](./flujo_datos.png)
+
+
 ### Estructura del Proyecto
 
 1. **Notebooks de Google Colab y Archivos Python**:
