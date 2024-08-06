@@ -1,7 +1,6 @@
 ### Descripción del Proyecto
-Este proyecto contiene el código y notebooks necesarios para el procesamiento de datos, creación de datasets, aumentación de imágenes, y entrenamiento de modelos YOLOv8 para detección de objetos. Específicamente, se ha entrenado un modelo YOLOv8n para el reconocimiento de cartas españolas, identificando sus respectivos valores y clases (Oros, Copas, Espadas y Bastos). Además, se han utilizado scripts adicionales para calcular el puntaje de envido en el juego argentino de cartas Truco.
 
----
+Este proyecto contiene el código y notebooks necesarios para el procesamiento de datos, creación de datasets, aumentación de imágenes, y entrenamiento de modelos YOLOv8 para detección de objetos. Específicamente, se ha entrenado un modelo YOLOv8n para el reconocimiento de cartas españolas, identificando sus respectivos valores y clases (Oros, Copas, Espadas y Bastos). Además, se han utilizado scripts adicionales para calcular el puntaje de envido en el juego argentino de cartas Truco.
 
 ### Estructura del Proyecto
 
@@ -9,7 +8,7 @@ Este proyecto contiene el código y notebooks necesarios para el procesamiento d
    - `procesamiento.ipynb`: contiene `duplicados_out.py` y `procesamiento.py`
    - `dataset.ipynb`: contiene `dataset.py` y `img_augment.py`
    - `main_yolo.ipynb`: contiene `main_yolo.py` y `best_model.py`
-   - `00.run_envido.ipynb`: procesamiento inicial
+   - `run_envido.ipynb`: inferencia
 
 2. **Descripción de Archivos Principales**:
    - **`duplicados_out.py`**: Elimina archivos duplicados calculando y comparando hashes MD5.
@@ -21,7 +20,41 @@ Este proyecto contiene el código y notebooks necesarios para el procesamiento d
    - **`cuda.py`**: Verifica la disponibilidad de CUDA y muestra información relevante de la GPU.
    - **`verfotos.py`**: Dibuja bounding boxes en imágenes y crea collages para visualización.
 
----
+### Funcionalidades Clave
+
+1. **Entrenamiento del Modelo YOLOv8n para Reconocimiento de Cartas**:
+   - El modelo YOLOv8n ha sido entrenado para reconocer cartas españolas, identificando su valor y clase (Oros, Copas, Espadas, Bastos).
+   - Utiliza PyTorch y la librería Ultralytics para el entrenamiento y evaluación del modelo.
+
+2. **Cálculo del Puntaje de Envido en Truco**:
+   - Scripts específicos calculan el puntaje de envido, una combinación de cartas en el juego argentino de cartas Truco.
+   - El puntaje de envido se calcula basado en las cartas reconocidas y sus valores correspondientes.
+
+### Utilización
+
+1. **Generación de Detecciones y Archivo JSON**:
+   - El notebook `run_envido.ipynb` genera una carpeta donde se guardan las detecciones en archivos "txt" de las imágenes presentes en una carpeta (por ejemplo, `img_test`).
+   - Además, crea un archivo JSON que contiene todas estas detecciones con la siguiente estructura:
+     ```json
+     {
+         "nombre_img.jpg": {
+             "total_cards": TOTAL_DE_CARTAS,
+             "cards": {
+                 "E": [ VALORES ],
+                 "C": [ VALORES ],
+                 "B": [ VALORES ],
+                 "O": [ VALORES ],
+                 "J": [ VALORES ]
+             },
+             "points": PUNTOS_DE_ENVIDO,
+             "figure": CLASE_DEL_ENVIDO
+         },
+         ...
+     }
+     ```
+
+2. **Inferencia en Tiempo Real con Cámara Web**:
+   - El archivo `camara.py` permite utilizar la cámara web del PC para realizar la inferencia en tiempo real, utilizando el modelo YOLOv8 entrenado.
 
 ### Instrucciones para Correr el Código
 
@@ -66,5 +99,5 @@ Este proyecto contiene el código y notebooks necesarios para el procesamiento d
 
 ### Información de Contacto
 
-Taiel Raffaeli  
-Email: raffaelitaiel@gmail.com
+#### Autor: Taiel Raffaeli  
+#### Email: raffaelitaiel@gmail.com
