@@ -56,6 +56,9 @@ Este proyecto contiene el código y notebooks necesarios para el procesamiento d
 2. **Inferencia en Tiempo Real con Cámara Web**:
    - El archivo `camara.py` permite utilizar la cámara web del PC para realizar la inferencia en tiempo real, utilizando el modelo YOLOv8 entrenado.
 
+3. **Descarga de Imágenes de Entrenamiento y Validación**:
+   - Puedes descargar las imágenes de entrenamiento (`train`), validación (`val`) y test desde el siguiente link: [Descargar Imágenes](https://drive.google.com/drive/folders/117aRAr9kXUSXA-oI3Y5MzmWhZUiNaHpJ?usp=drive_link)
+
 ### Instrucciones para Correr el Código
 
 #### Instalación de Librerías de Forma Local
